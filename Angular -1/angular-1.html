@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+<form name="MYANG" ng-app="myApp" ng-controller="myCtrl" style="margin-left:400px ;margin-top:30px; margin-right:400px;border:1px solid black;padding: 40px;background-color:lightcoral; ">
+<div >
+
+    <b>MATHS</b> <br>  <input type="text" ng-model="maths" placeholder="Enter a value" required><br><br>
+    <b>PHYSICS</b> <br><input type="text" ng-model="physics" placeholder="Enter a value" required><br><br>
+    <b>SOCIAL</b><br> <input type="text" ng-model="social" placeholder="Enter a value" required><br><br>
+    <b>TELUGU</b><br><input type="text" ng-model="telugu " placeholder="Enter a value" required><br><br>
+    <b>ENGLISH</b> <br><input type="text" ng-model="english" placeholder="Enter a value" required><br><br>
+    <input type="submit" value="click" ng-click="sum()" style="background-color:green;color:white" required/>
+
+</div>
+    <p id ="demo">Total:<span ng-bind="result" style="color:black"></span></p>
+
+</form>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('myCtrl',function($scope){
+        $scope.sum = function(){
+            $scope.result= parseInt($scope.maths) + parseInt($scope.physics) + parseInt($scope.social) + parseInt($scope.telugu) + parseInt($scope.english);
+
+        };
+    });
+
+</script>
+</body>
+</html>
+
